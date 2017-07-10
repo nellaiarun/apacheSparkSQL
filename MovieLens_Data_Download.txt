@@ -1,0 +1,7 @@
+#Due to licensing restrictions, movie lens data can’t be redistributed here.
+#However, please follow below instructions to download the data.
+#First, create a sub-folder called ‘sql’ under data folder in spark path
+$ /Arun/spark-2.1.1-bin-hadoop2.7/data
+$ mkdir sql
+$ cd sql
+#Now, download ml-100k.zip file from http://files.grouplens.org/datasets/movielens/ml-100k.zip

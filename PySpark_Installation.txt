@@ -1,0 +1,24 @@
+$ cd ~
+
+#Download spark from http://spark.apache.org/downloads.html and store it home path
+
+$ tar -zxvf spark-2.1.1-bin-hadoop2.7.tgz
+
+$ nano ~/.bash_profile
+
+export SPARK_PATH=~/spark-2.1.1-bin-hadoop2.7/ 
+export PYSPARK_DRIVER_PYTHON="jupyter" 
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+#For python 3, following line must be added to avoid installation errors
+export PYSPARK_PYTHON=//anaconda/envs/py35/bin/python
+alias spark='$SPARK_PATH/bin/pyspark --master local[2]'
+
+$ cd ~/spark-2.1.1-bin-hadoop2.7/conf
+$ mv log4j.properties.template log4j.properties
+$ nano log4j.properties
+
+# Change “INFO” to “ERROR” => log4j.rootCategory=ERROR it helps avoid cluttering
+
+$ spark
+
+Browser -> http://localhost:8888/ => opens up Jupyter Notebook
